@@ -1,0 +1,20 @@
+{
+  "name": "scikit-learn Digits",
+  "loaded_at": "2026-09-30T13:07:08+00:00",
+  "source_access_date": "2026-09-30",
+  "source": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html",
+  "original_source": "https://archive.ics.uci.edu/dataset/80/optical%2Brecognition%2Bof%2Bhandwritten%2Bdigits",
+  "license": "CC BY4.0 (UCI)",
+  "sklearn_version": "1.7.2",
+  "shape": [
+    1797,
+    64
+  ],
+  "sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443",
+  "hash_format": "float64 little-endian X + int64 little-endian y",
+  "acquisition": "sklearn.datasets.load_digits bundled dataset; no external download required",
+  "files": [
+    "data/raw/digits.npz",
+    "data/splits.json"
+  ]
+}

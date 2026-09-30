@@ -1,0 +1,27 @@
+# Môi trường Python và cache
+.venv/
+venv/
+.idea/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# File tạm khi đọc đặc tả và kiểm tra giao diện
+.task/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Cache dữ liệu và các lần tái lập riêng
+data/raw/
+data/processed/
+runs/
+dist/
+
+# Cấu hình cá nhân; không đưa bí mật vào kho mã nguồn
+.env
+.env.*
+!.env.example
