@@ -1,0 +1,12 @@
+{
+  "events": [
+    {
+      "accessed_at": "2026-09-30T13:09:02+00:00",
+      "status": "complete",
+      "dataset_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443",
+      "model_sha256": "6ff9541910af248e07efac20cfeb33763a972e68f6e65ad058a6f44880c55154",
+      "repeat_reason": null,
+      "note": "Recorded from existing completed initial evaluation; no repeat scoring."
+    }
+  ]
+}
