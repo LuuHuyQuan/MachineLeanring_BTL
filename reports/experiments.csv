@@ -1,0 +1,8 @@
+id,kind,n_iter,fit_seconds,eligible_for_selection,validation_accuracy,validation_macro_f1,validation_log_loss,configuration
+logistic,baseline,70,0.06160109999473207,False,0.9722222222222222,0.972475199891754,0.1734861435838834,"{'C': 1.0, 'max_iter': 2000, 'solver': 'lbfgs'}"
+mlp_64,mlp,54,0.216413799993461,True,0.9416666666666667,0.9416581905586862,0.22761403564997448,"{'hidden_layer_sizes': (64,), 'alpha': 0.0001, 'early_stopping': True}"
+mlp_128,mlp,49,0.21865809999872,True,0.9416666666666667,0.9417514077241801,0.2219587189541547,"{'hidden_layer_sizes': (128,), 'alpha': 0.0001, 'early_stopping': True}"
+mlp_64_32,mlp,87,0.3591195999761112,True,0.9694444444444444,0.9696969517918304,0.10597283643747218,"{'hidden_layer_sizes': (64, 32), 'alpha': 0.0001, 'early_stopping': True}"
+mlp_128_64,mlp,58,0.38921880000270903,True,0.9638888888888889,0.9643293343617696,0.10875585541339107,"{'hidden_layer_sizes': (128, 64), 'alpha': 0.0001, 'early_stopping': True}"
+mlp_128_64_alpha,mlp,67,1.4898851999896578,True,0.9722222222222222,0.9725769797322478,0.09512447228493542,"{'hidden_layer_sizes': (128, 64), 'alpha': 0.01, 'early_stopping': True}"
+mlp_no_early_stop,mlp,124,3.41533519999939,False,0.9805555555555555,0.9806018805963396,0.06328732602575732,"{'hidden_layer_sizes': (128, 64), 'alpha': 0.0001, 'early_stopping': False}"

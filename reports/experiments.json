@@ -1,0 +1,288 @@
+{
+  "generated_at": "2026-09-30T13:08:10+00:00",
+  "selection_metric": "validation accuracy, then macro-F1, then lower log loss; only early_stopping=True MLP eligible",
+  "selected_experiment": "mlp_128_64_alpha",
+  "experiments": [
+    {
+      "id": "logistic",
+      "name": "Logistic Regression",
+      "kind": "baseline",
+      "configuration": {
+        "C": 1.0,
+        "max_iter": 2000,
+        "solver": "lbfgs"
+      },
+      "eligible_for_selection": false,
+      "train": {
+        "accuracy": 0.9870009285051068,
+        "macro_f1": 0.9869525090538132,
+        "log_loss": 0.12603171877465502
+      },
+      "validation": {
+        "accuracy": 0.9722222222222222,
+        "macro_f1": 0.972475199891754,
+        "log_loss": 0.1734861435838834
+      },
+      "n_iter": 70,
+      "fit_seconds": 0.06160109999473207,
+      "warnings": []
+    },
+    {
+      "id": "mlp_64",
+      "name": "mlp_64",
+      "kind": "mlp",
+      "configuration": {
+        "hidden_layer_sizes": [
+          64
+        ],
+        "alpha": 0.0001,
+        "early_stopping": true
+      },
+      "eligible_for_selection": true,
+      "train": {
+        "accuracy": 0.9702878365831012,
+        "macro_f1": 0.9702930259668205,
+        "log_loss": 0.17705727683045605
+      },
+      "validation": {
+        "accuracy": 0.9416666666666667,
+        "macro_f1": 0.9416581905586862,
+        "log_loss": 0.22761403564997448
+      },
+      "n_iter": 54,
+      "fit_seconds": 0.216413799993461,
+      "warnings": []
+    },
+    {
+      "id": "mlp_128",
+      "name": "mlp_128",
+      "kind": "mlp",
+      "configuration": {
+        "hidden_layer_sizes": [
+          128
+        ],
+        "alpha": 0.0001,
+        "early_stopping": true
+      },
+      "eligible_for_selection": true,
+      "train": {
+        "accuracy": 0.9712163416898792,
+        "macro_f1": 0.9712161940716753,
+        "log_loss": 0.16509886035522375
+      },
+      "validation": {
+        "accuracy": 0.9416666666666667,
+        "macro_f1": 0.9417514077241801,
+        "log_loss": 0.2219587189541547
+      },
+      "n_iter": 49,
+      "fit_seconds": 0.21865809999872,
+      "warnings": []
+    },
+    {
+      "id": "mlp_64_32",
+      "name": "mlp_64_32",
+      "kind": "mlp",
+      "configuration": {
+        "hidden_layer_sizes": [
+          64,
+          32
+        ],
+        "alpha": 0.0001,
+        "early_stopping": true
+      },
+      "eligible_for_selection": true,
+      "train": {
+        "accuracy": 0.9925719591457753,
+        "macro_f1": 0.9925687331162301,
+        "log_loss": 0.044574038068977286
+      },
+      "validation": {
+        "accuracy": 0.9694444444444444,
+        "macro_f1": 0.9696969517918304,
+        "log_loss": 0.10597283643747218
+      },
+      "n_iter": 87,
+      "fit_seconds": 0.3591195999761112,
+      "warnings": []
+    },
+    {
+      "id": "mlp_128_64",
+      "name": "mlp_128_64",
+      "kind": "mlp",
+      "configuration": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 0.0001,
+        "early_stopping": true
+      },
+      "eligible_for_selection": true,
+      "train": {
+        "accuracy": 0.9944289693593314,
+        "macro_f1": 0.9944175725858644,
+        "log_loss": 0.04955236869160681
+      },
+      "validation": {
+        "accuracy": 0.9638888888888889,
+        "macro_f1": 0.9643293343617696,
+        "log_loss": 0.10875585541339107
+      },
+      "n_iter": 58,
+      "fit_seconds": 0.38921880000270903,
+      "warnings": []
+    },
+    {
+      "id": "mlp_128_64_alpha",
+      "name": "mlp_128_64_alpha",
+      "kind": "mlp",
+      "configuration": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 0.01,
+        "early_stopping": true
+      },
+      "eligible_for_selection": true,
+      "train": {
+        "accuracy": 0.9953574744661096,
+        "macro_f1": 0.9953433992704236,
+        "log_loss": 0.0380342108553872
+      },
+      "validation": {
+        "accuracy": 0.9722222222222222,
+        "macro_f1": 0.9725769797322478,
+        "log_loss": 0.09512447228493542
+      },
+      "n_iter": 67,
+      "fit_seconds": 1.4898851999896578,
+      "warnings": []
+    },
+    {
+      "id": "mlp_no_early_stop",
+      "name": "mlp_no_early_stop",
+      "kind": "mlp",
+      "configuration": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "alpha": 0.0001,
+        "early_stopping": false
+      },
+      "eligible_for_selection": false,
+      "train": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "log_loss": 0.0012035371155523693
+      },
+      "validation": {
+        "accuracy": 0.9805555555555555,
+        "macro_f1": 0.9806018805963396,
+        "log_loss": 0.06328732602575732
+      },
+      "n_iter": 124,
+      "fit_seconds": 3.41533519999939,
+      "warnings": []
+    }
+  ],
+  "learning_curve": {
+    "scope": "TRAIN only,3 stratified folds; no external validation/test",
+    "folds": 3,
+    "seed": 42,
+    "models": {
+      "baseline": {
+        "train_sizes": [
+          215,
+          430,
+          718
+        ],
+        "train_mean": [
+          0.9922480620155039,
+          0.9906976744186046,
+          0.9902506963788301
+        ],
+        "train_std": [
+          0.0021925791664699082,
+          0.0032888687497048363,
+          0.0011371818675873903
+        ],
+        "cv_mean": [
+          0.9247910863509748,
+          0.9387186629526463,
+          0.9591457753017641
+        ],
+        "cv_std": [
+          0.008200335066228246,
+          0.0039393135442147426,
+          0.012526218721663917
+        ],
+        "cv_fold_scores": [
+          [
+            0.9220055710306406,
+            0.9164345403899722,
+            0.935933147632312
+          ],
+          [
+            0.935933147632312,
+            0.935933147632312,
+            0.9442896935933147
+          ],
+          [
+            0.9415041782729805,
+            0.9665738161559888,
+            0.9693593314763231
+          ]
+        ]
+      },
+      "mlp": {
+        "train_sizes": [
+          215,
+          430,
+          718
+        ],
+        "train_mean": [
+          0.945736434108527,
+          0.9728682170542635,
+          0.9883936861652739
+        ],
+        "train_std": [
+          0.03822892404942003,
+          0.016149353996898937,
+          0.0062631093608319695
+        ],
+        "cv_mean": [
+          0.872794800371402,
+          0.9275766016713091,
+          0.9535747446610957
+        ],
+        "cv_std": [
+          0.058355641086242034,
+          0.023635881265288455,
+          0.010504836117905998
+        ],
+        "cv_fold_scores": [
+          [
+            0.8913649025069638,
+            0.7938718662952646,
+            0.9331476323119777
+          ],
+          [
+            0.9442896935933147,
+            0.8941504178272981,
+            0.9442896935933147
+          ],
+          [
+            0.9387186629526463,
+            0.9610027855153204,
+            0.9610027855153204
+          ]
+        ]
+      }
+    }
+  },
+  "protocol": "Fit on train only; external validation selects; test remains unseen.",
+  "rerun_archive": null
+}

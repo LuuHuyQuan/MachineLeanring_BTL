@@ -1,0 +1,53 @@
+{
+  "model_name": "MLPClassifier",
+  "selected_experiment": "mlp_128_64_alpha",
+  "configuration": {
+    "hidden_layer_sizes": [
+      128,
+      64
+    ],
+    "alpha": 0.01,
+    "early_stopping": true
+  },
+  "common_configuration": {
+    "activation": "relu",
+    "solver": "adam",
+    "max_iter": 500,
+    "validation_fraction": 0.15,
+    "n_iter_no_change": 25,
+    "batch_size": 64
+  },
+  "seed": 42,
+  "split": {
+    "train": 1077,
+    "validation": 360,
+    "test": 360
+  },
+  "trained_at": "2026-09-30T13:08:10+00:00",
+  "sklearn_version": "1.7.2",
+  "python_version": "3.12.14",
+  "dataset_sha256": "f6d9e39f37dc45d327f6db33428ee58970ccceabb2535a5c179de35886b70443",
+  "split_sha256": "60a8ad4374cc20222e1d47510a24cef1e5b1551974e0b0c9ad495f8b9b863a79",
+  "model_sha256": "6ff9541910af248e07efac20cfeb33763a972e68f6e65ad058a6f44880c55154",
+  "baseline_sha256": "9355ac94982d62b99aefe809b34406c64d57e0ff2726ddf73feee861403a8667",
+  "preprocessing": "8×8 grayscale pixels0..16; PixelScaler divides by16 in both training and API",
+  "canvas_adapter": "White strokes on black280×280; crop, aspect-preserving center, area mean to8×8, intensity×16/255",
+  "selection_metric": "validation accuracy, then macro-F1, then lower log loss; only early_stopping=True MLP eligible",
+  "validation_metrics": {
+    "accuracy": 0.9722222222222222,
+    "macro_f1": 0.9725769797322478,
+    "log_loss": 0.09512447228493542
+  },
+  "n_iter": 67,
+  "source": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html",
+  "license": "CC BY4.0 (UCI)",
+  "limitations": [
+    "Dữ liệu nhỏ:1.797 ảnh chuẩn hóa8×8; độ chính xác test không đại diện mọi nét vẽ canvas.",
+    "Canvas dùng bộ chuyển ảnh cố định; vẫn có khác biệt miền dữ liệu với Digits gốc.",
+    "Chỉ nhận một chữ số0–9; không hỗ trợ chữ, nhiều chữ số, ảnh tài liệu hay mục đích pháp lý.",
+    "Xác suất chưa hiệu chỉnh; độ tin cậy cao không bảo đảm đầu vào nằm trong miền.",
+    "Không có ID người viết để kiểm chứng tổng quát hóa theo người viết độc lập."
+  ],
+  "rerun_after_test_inspection": false,
+  "rerun_reason": null
+}
