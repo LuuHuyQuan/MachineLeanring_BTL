@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}DigitLab · Từ nét vẽ đến mạng neuron{% endblock %}
+{% block content %}
+<div class="page-shell home-shell">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="small-line"></span> NHẬN DẠNG CHỮ SỐ VIẾT TAY</div>
+      <h1>Từ nét vẽ của bạn<br>đến <span>mạng neuron.</span></h1>
+      <p class="hero-description">Một chữ số, 64 pixel và một mạng MLP. Khám phá cách máy học nhìn nét viết tay — từ ảnh đầu vào đến xác suất của từng chữ số.</p>
+      <div class="hero-actions"><a class="button primary" href="/recognize"><svg class="icon"><use href="#i-pen"/></svg>Bắt đầu vẽ<svg class="icon button-arrow"><use href="#i-arrow"/></svg></a><a class="button secondary" href="/dashboard">Xem đánh giá mô hình<svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      <div class="hero-assurance"><svg class="icon"><use href="#i-check"/></svg> Chạy local <span>·</span> Pipeline có thể tái lập <span>·</span> Test độc lập</div>
+    </div>
+    <div class="hero-visual" aria-label="Minh hoạ quy trình: 64 pixel đầu vào, mạng MLP, 10 lớp chữ số">
+      <div class="visual-heading"><span class="live-dot"></span> MỘT NÉT VẼ. NHIỀU ĐIỀU ĐỂ KHÁM PHÁ.<span class="visual-index">01 / 03</span></div>
+      <div class="digit-display"><div class="hero-pixel-grid" id="hero-digit" aria-hidden="true"></div><span class="pixel-dimension">8 × 8</span><span class="pixel-caption">Ảnh minh hoạ · 64 pixel</span></div>
+      <div class="visual-pipeline"><span><svg class="icon"><use href="#i-grid"/></svg>Đầu vào <strong>64</strong></span><svg class="icon pipeline-arrow"><use href="#i-arrow"/></svg><span><svg class="icon"><use href="#i-layers"/></svg>Mạng <strong>MLP</strong></span><svg class="icon pipeline-arrow"><use href="#i-arrow"/></svg><span><svg class="icon"><use href="#i-spark"/></svg>Đầu ra <strong>0–9</strong></span></div>
+      <div class="visual-bottom"><span><i></i> Pixel → Biểu diễn → Phân loại</span><span>ReLU activation</span></div>
+    </div>
+  </section>
+  <section class="dataset-strip" aria-label="Thông tin bộ dữ liệu">
+    <div class="dataset-lead"><div class="dataset-icon"><svg class="icon"><use href="#i-grid"/></svg></div><span>NHỎ GỌN. RÕ RÀNG.<strong>Bộ dữ liệu Digits</strong></span></div>
+    <div class="dataset-stat"><strong>1.797</strong><span>ảnh chữ số viết tay</span></div><div class="dataset-stat"><strong>8 × 8</strong><span>pixel / ảnh xám</span></div><div class="dataset-stat"><strong>10</strong><span>lớp từ 0 đến 9</span></div><div class="dataset-stat"><strong>0–16</strong><span>miền giá trị pixel</span></div>
+  </section>
+  <section class="workflow-section">
+    <div class="section-heading"><div><div class="eyebrow">KHÁM PHÁ THEO TỪNG BƯỚC</div><h2>Nhìn thấy điều mô hình học.</h2></div><p>Không chỉ là một nhãn dự đoán.<br>Hiểu cả dữ liệu, quy trình và giới hạn.</p></div>
+    <div class="workflow-grid">
+      <article class="workflow-card"><div class="workflow-top"><span class="step-number">01</span><svg class="icon"><use href="#i-pen"/></svg></div><h3>Vẽ &amp; chuẩn hoá</h3><p>Vẽ một chữ số trên canvas. Quan sát nét vẽ được chuyển thành ảnh xám 8 × 8 và 64 đặc trưng.</p><a href="/recognize">Thử với nét vẽ của bạn <svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="workflow-card"><div class="workflow-top"><span class="step-number">02</span><svg class="icon"><use href="#i-layers"/></svg></div><h3>Đọc dự đoán</h3><p>Mạng MLP trả xác suất cho cả 10 chữ số. So sánh các khả năng và thử những nét viết khác nhau.</p><a href="/recognize">Khám phá xác suất <svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="workflow-card"><div class="workflow-top"><span class="step-number">03</span><svg class="icon"><use href="#i-chart"/></svg></div><h3>Kiểm chứng kết quả</h3><p>Đối chiếu MLP với Logistic Regression trên cùng tập test. Đọc ma trận nhầm lẫn và thí nghiệm validation.</p><a href="/dashboard">Mở dashboard đánh giá <svg class="icon"><use href="#i-arrow"/></svg></a></article>
+    </div>
+  </section>
+  <section class="scope-banner"><div class="scope-icon"><svg class="icon"><use href="#i-info"/></svg></div><div><h3>Một phòng thí nghiệm nhỏ, một phạm vi rõ ràng.</h3><p>Mô hình học từ ảnh chữ số 8 × 8 đã chuẩn hoá. Nét vẽ tự do có thể khác dữ liệu huấn luyện; kết quả phục vụ học tập và không dùng cho tài liệu pháp lý.</p></div><span class="outline-badge">EDUCATIONAL USE</span></section>
+</div>
+{% endblock %}

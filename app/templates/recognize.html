@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Nhận dạng chữ số · DigitLab{% endblock %}
+{% block content %}
+<div class="page-shell practice-shell">
+  <div class="page-heading"><div><div class="eyebrow">PHÒNG THỬ NGHIỆM</div><h1>Vẽ một chữ số. <span>Khám phá dự đoán.</span></h1><p>Vẽ từ 0 đến 9, xem ảnh 8 × 8 và xác suất mô hình trả về.</p></div><span class="model-status" data-model-status><span class="status-dot"></span>Đang kiểm tra mô hình</span></div>
+  <div class="notice warning model-alert" data-model-alert hidden></div>
+  <div class="recognition-layout">
+    <section class="card drawing-card" aria-labelledby="drawing-title">
+      <div class="card-heading"><div><span class="section-kicker">01 · ĐẦU VÀO</span><h2 id="drawing-title">Nét vẽ của bạn</h2></div><span class="quiet-badge">280 × 280 px</span></div>
+      <div class="canvas-wrap"><canvas id="digit-canvas" width="280" height="280" tabindex="0" aria-label="Vùng vẽ chữ số từ 0 đến 9 bằng chuột hoặc cảm ứng. Có thể dùng nút mẫu dữ liệu khi không dùng thiết bị trỏ."></canvas><div class="canvas-placeholder" id="canvas-placeholder" aria-hidden="true"><svg class="icon"><use href="#i-pen"/></svg><strong>Vẽ một chữ số ở đây</strong><span>Nét lớn, ở giữa khung</span></div><span class="canvas-corner" aria-hidden="true">0–9</span></div>
+      <div class="canvas-toolbar"><button class="button secondary" id="clear-button" type="button"><svg class="icon"><use href="#i-reset"/></svg>Xoá nét vẽ</button><button class="button secondary" id="example-button" type="button"><svg class="icon"><use href="#i-grid"/></svg>Dùng mẫu Digits</button></div>
+      <button class="button primary predict-button" id="predict-button" type="button"><svg class="icon"><use href="#i-spark"/></svg><span>Nhận dạng chữ số</span><svg class="icon button-arrow"><use href="#i-arrow"/></svg></button>
+      <p class="drawing-hint">Một chữ số · Nét trắng · Nền đen</p>
+      <div class="status-message" id="prediction-status" role="status" aria-live="polite">Sẵn sàng. Vẽ một chữ số hoặc chọn mẫu từ tập train.</div>
+    </section>
+    <div class="results-column">
+      <section class="card result-card" aria-labelledby="result-title"><div class="card-heading"><div><span class="section-kicker">02 · DỰ ĐOÁN</span><h2 id="result-title">Mô hình nhìn thấy gì?</h2></div><span class="quiet-badge" id="result-model">Mạng MLP</span></div>
+        <div class="prediction-summary"><div class="prediction-number" id="prediction-number">?</div><div><span class="result-caption" id="result-caption">CHƯA CÓ DỰ ĐOÁN</span><h3 id="prediction-description">Chờ nét vẽ đầu tiên</h3><p id="confidence-description">Kết quả và xác suất sẽ xuất hiện tại đây.</p></div></div>
+        <div class="probability-heading"><h3>Xác suất cho 10 chữ số</h3><span id="probability-summary">Chưa có dữ liệu</span></div><div class="probability-chart" id="probability-chart" aria-label="Xác suất dự đoán cho các chữ số từ 0 đến 9"></div>
+        <div class="notice warning" id="prediction-warning" hidden></div>
+      </section>
+      <section class="card preprocessing-card" aria-labelledby="preprocessing-title"><div class="preview-grid" id="pixel-preview" role="img" aria-label="Ảnh 8 × 8 sau tiền xử lý: chưa có dữ liệu"></div><div class="preprocessing-info"><span class="section-kicker">03 · SAU TIỀN XỬ LÝ</span><h2 id="preprocessing-title">Ảnh mà mô hình nhận</h2><p>Mọi dự đoán dùng cùng phép scale pixel về [0, 1] như khi huấn luyện.</p><div class="preprocessing-facts"><span><strong>8 × 8</strong>ảnh xám</span><span><strong>0–16</strong>giá trị pixel</span><span><strong>64</strong>đặc trưng</span></div><p class="preview-caption" id="preview-caption">Vẽ hoặc dùng mẫu để xem ảnh đầu vào.</p></div></section>
+    </div>
+  </div>
+  <div class="practice-bottom"><svg class="icon"><use href="#i-info"/></svg><p><strong>Mẹo để thử tốt hơn:</strong> vẽ nét liền, đủ dày và vừa khung. Mẫu Digits thuộc tập train; kết quả trên mẫu này chỉ để minh hoạ. Nét vẽ tự do có thể nằm ngoài miền dữ liệu.</p><a href="/dashboard">Xem giới hạn mô hình<svg class="icon"><use href="#i-arrow"/></svg></a></div>
+</div>
+{% endblock %}

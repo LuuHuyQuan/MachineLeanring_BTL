@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="DigitLab — ứng dụng học tập nhận dạng chữ số viết tay 8 × 8 bằng mạng neuron nhiều lớp.">
+  <title>{% block title %}DigitLab · Nhận dạng chữ số{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body data-page="{{ active_page|default('home') }}">
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1 12-12a2 2 0 0 0-5-5L4 14zM3 21h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M8 15v-5m5 5V6m5 9v-8"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 9a8 8 0 1 1 0 6M4 4v5h5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10v7m0-11v.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m3 7 9-5 9 5-9 5zM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="DigitLab — trang giới thiệu">
+        <span class="brand-mark" aria-hidden="true"><span>∴</span></span>
+        <span class="brand-name">DigitLab<span>HANDWRITTEN DIGITS</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="/" {% if request.path == '/' %}class="active" aria-current="page"{% endif %}><svg class="icon"><use href="#i-grid"/></svg>Giới thiệu</a>
+        <a href="/recognize" {% if request.path == '/recognize' %}class="active" aria-current="page"{% endif %}><svg class="icon"><use href="#i-pen"/></svg>Nhận dạng</a>
+        <a href="/dashboard" {% if request.path == '/dashboard' %}class="active" aria-current="page"{% endif %}><svg class="icon"><use href="#i-chart"/></svg>Đánh giá</a>
+      </nav>
+      <span class="header-tag">MLP <span class="tag-dot"></span> Digits</span>
+    </div>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="site-footer"><div class="footer-inner">
+    <span><strong>DigitLab</strong> · Project 28 · Học máy cơ bản</span>
+    <span>Dữ liệu: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html" target="_blank" rel="noopener noreferrer">scikit-learn Digits <span aria-hidden="true">↗</span></a></span>
+    <span class="footer-note">Xây dựng để học và khám phá.</span>
+  </div></footer>
+</body>
+</html>
